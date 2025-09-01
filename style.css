@@ -1,0 +1,427 @@
+/* Importando a fonte Inter, semelhante à da Apple */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --apple-blue: #0071e3;
+    --light-gray: #f5f5f7;
+    --text-color: #1d1d1f;
+    --dark-bg: #161617;
+    --border-color: #d2d2d7;
+    --nav-height: 60px;
+}
+
+/* Reset básico e configurações globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Para a rolagem do menu ser suave */
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    color: var(--text-color);
+    padding-top: var(--nav-height); /* Compensa o header fixo */
+}
+
+/* --- BARRA DE NAVEGAÇÃO SUPERIOR --- */
+.main-header {
+    width: 100%;
+    height: var(--nav-height);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e8e8e8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--apple-blue);
+}
+
+.logo-container span {
+    font-weight: 700;
+    font-size: 18px;
+}
+.logo-container img {
+    max-height: 30px;
+}
+
+/* --- SEÇÃO HERO --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - var(--nav-height));
+    background-color: var(--dark-bg);
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    color: #a1a1a6;
+    margin-bottom: 40px;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.category-buttons a {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.category-buttons a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+
+/* --- ESTILOS DA SEÇÃO "CONHEÇA A FAMÍLIA" (HOME PAGE) --- */
+.family-section {
+    background-color: #fafafa;
+    padding: 80px 20px;
+}
+
+.family-container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.family-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.family-header h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.family-header a {
+    font-size: 14px;
+    color: var(--apple-blue);
+    text-decoration: none;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.product-card .tagline {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #6e6e73;
+    min-height: 40px;
+}
+
+.product-card .price {
+    font-size: 14px;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-primary {
+    background-color: var(--apple-blue);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.button-primary:hover {
+    background-color: #0077ed;
+}
+
+/* --- ESTILOS DAS PÁGINAS DE PRODUTO (IPHONE-XX-FAMILY.HTML) --- */
+.page-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-title h1 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.product-configurator-card {
+    display: flex;
+    gap: 40px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 18px;
+    margin-bottom: 60px;
+    border: 1px solid #e8e8e8;
+}
+
+.images-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.images-container img {
+    max-width: 45%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.details-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.details-container h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.option-group {
+    margin-bottom: 30px;
+}
+
+.option-label {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.details-container .selector {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-right: 10px;
+    margin-bottom: 10px; /* Adicionado para quebra de linha */
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.details-container .selector.selected {
+    border-color: var(--apple-blue);
+    box-shadow: 0 0 0 2px var(--apple-blue);
+}
+
+.color-options {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.color-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff; /* Borda branca para destacar */
+    outline: 1px solid var(--border-color);
+    transition: transform 0.2s, outline-color 0.2s;
+    position: relative;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+}
+
+.color-swatch.selected {
+    outline-color: var(--apple-blue);
+    outline-width: 2px;
+}
+
+.buy-button {
+    padding: 14px 24px;
+    text-align: center;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+/* --- ESTILO PARA O AVISO DE PRODUTO USADO --- */
+
+.availability-notice {
+    background-color: #f5f5f7;
+    border: 1px solid #d2d2d7;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    
+    /* Lógica para esconder/mostrar com transição */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+}
+
+.availability-notice.visible {
+    max-height: 100px; /* Altura suficiente para o conteúdo */
+    opacity: 1;
+    margin-top: 20px;
+}
+/* --- ESTILO PARA O BOTÃO 'ENTENDIDO' DO AVISO --- */
+
+.close-notice-btn {
+    background-color: transparent;
+    border: 1px solid #b1b1b1;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s, border-color 0.2s;
+    display: block; /* Para que o margin-top funcione corretamente */
+    margin-left: auto; /* Alinha o botão à direita */
+    margin-right: auto; /* Alinha o botão no centro (se preferir) */
+}
+
+.close-notice-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #888;
+}
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+    .product-configurator-card {
+        flex-direction: column;
+    }
+    .images-container {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #e8e8e8;
+        margin-bottom: 30px;
+    }
+    .details-container {
+        align-items: center;
+        text-align: center;
+    }
+    .buy-button {
+        align-self: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-nav {
+        display: none;
+    }
+    .nav-container {
+        justify-content: center;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    .product-card {
+        padding: 20px;
+    }
+    .page-title h1 {
+        font-size: 32px;
+    }
+}
