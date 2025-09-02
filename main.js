@@ -1,34 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- LÓGICA PARA NAVEGAÇÃO DE DESKTOP (GAVETA) ---
+    // (Esta parte não foi alterada e continua funcionando)
     const desktopDropdownTrigger = document.querySelector('.dropdown-trigger');
     const desktopDropdownMenu = document.querySelector('.dropdown-menu');
-    // ... (resto da lógica do dropdown de desktop que já funciona)
+    const desktopSubmenuTrigger = document.querySelector('.submenu-trigger');
+    const desktopSubmenu = document.querySelector('.submenu');
 
-    // --- LÓGICA REFEITA PARA NAVEGAÇÃO MOBILE (HAMBURGER) ---
+    if (desktopDropdownTrigger && desktopDropdownMenu) {
+        desktopDropdownTrigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            desktopDropdownMenu.classList.toggle('is-open');
+        });
+
+        if (desktopSubmenuTrigger && desktopSubmenu) {
+            desktopSubmenuTrigger.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                desktopSubmenu.classList.toggle('is-open');
+                desktopSubmenuTrigger.classList.toggle('open');
+            });
+        }
+    }
+
+    // --- LÓGICA CORRIGIDA PARA NAVEGAÇÃO MOBILE (HAMBURGER) ---
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const mobileMenu = document.querySelector('.mobile-menu-container');
     const closeMenuBtn = document.querySelector('.close-menu-btn');
 
+    const openMenu = () => {
+        mobileMenu.classList.add('is-open');
+        mobileNavToggle.setAttribute('aria-expanded', true);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.remove('is-open');
+        mobileNavToggle.setAttribute('aria-expanded', false);
+        document.body.style.overflow = 'auto';
+    };
+
     if (mobileNavToggle && mobileMenu && closeMenuBtn) {
-        // Abre o menu
         mobileNavToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('is-open');
-            document.body.style.overflow = 'hidden'; // Trava o scroll
+            const isOpen = mobileMenu.classList.contains('is-open');
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
 
-        // Fecha o menu
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('is-open');
-            document.body.style.overflow = 'auto'; // Libera o scroll
-        });
+        closeMenuBtn.addEventListener('click', closeMenu);
 
-        // Fecha o menu se um link for clicado
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('is-open');
-                document.body.style.overflow = 'auto';
-            });
+            link.addEventListener('click', closeMenu);
         });
     }
     // --- LÓGICA DO CARROSSEL DE FEEDBACKS (SEM ALTERAÇÕES) ---
