@@ -3,13 +3,13 @@
 
 :root {
     --apple-blue: #0071e3;
-    --apple-blue-bright: #2997ff; /* Azul mais brilhante para o tema escuro */
+    --apple-blue-bright: #2997ff;
     --light-gray: #f5f5f7;
     --text-color: #1d1d1f;
     --text-color-light: #f5f5f7;
     --dark-bg: #161617;
     --border-color: #d2d2d7;
-    --nav-height: 60px; /* Mantemos a altura robusta */
+    --nav-height: 60px;
 }
 
 /* Reset básico e configurações globais */
@@ -30,18 +30,18 @@ body {
     padding-top: var(--nav-height); 
 }
 
-/* --- BARRA DE NAVEGAÇÃO E DROPDOWN (VERSÃO DARK MODE) --- */
+/* --- BARRA DE NAVEGAÇÃO E DROPDOWN (TEMA CLARO REFINADO) --- */
 .main-header {
     width: 100%;
     height: var(--nav-height);
-    background-color: rgba(22, 22, 23, 0.8); /* Fundo escuro semi-transparente */
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borda clara sutil */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .nav-container {
@@ -64,7 +64,7 @@ body {
 
 .main-nav a {
     text-decoration: none;
-    color: var(--text-color-light); /* Cor do texto clara */
+    color: var(--text-color);
     font-size: 14px;
     font-weight: 500;
     transition: color 0.2s ease;
@@ -74,7 +74,13 @@ body {
 }
 
 .main-nav a:hover {
-    color: var(--apple-blue-bright); /* Azul brilhante para contraste */
+    color: var(--apple-blue);
+}
+
+.logo-container {
+    position: absolute; /* Ajuda a centralizar corretamente com nav à esquerda */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .logo-container a {
@@ -83,7 +89,7 @@ body {
 }
 
 .header-logo {
-    height: 40px; /* Logo com destaque */
+    height: 40px;
     width: auto;
     display: block;
 }
@@ -92,7 +98,6 @@ body {
     position: static;
 }
 
-/* O dropdown continua claro para melhor legibilidade */
 .dropdown-menu {
     position: absolute;
     top: 60px;
@@ -196,7 +201,6 @@ body {
     font-size: 20px !important;
     font-weight: 500 !important;
 }
-
 
 /* --- SEÇÃO HERO --- */
 .hero-section {
@@ -475,7 +479,7 @@ body {
 }
 
 .feedback-card {
-    flex: 0 0 calc((100% / 3) - 20px);
+    flex: 0 0 calc((100% - 60px) / 3);
     background-color: #2c2c2e;
     border-radius: 18px;
     padding: 30px;
@@ -587,32 +591,87 @@ body {
 }
 
 
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 900px) {
-    .product-configurator-card {
-        flex-direction: column;
-    }
-    .images-container {
-        padding-bottom: 30px;
-        border-bottom: 1px solid #e8e8e8;
-        margin-bottom: 30px;
-    }
-    .details-container {
-        align-items: center;
-        text-align: center;
-    }
-    .buy-button {
-        align-self: center;
+/* --- RESPONSIVIDADE E MENU MOBILE --- */
+
+/* ... (todo o CSS que já tínhamos) ... */
+
+/* --- RESPONSIVIDADE E MENU MOBILE --- */
+
+/* Desktop (acima de 991px) */
+@media (min-width: 992px) {
+    .mobile-nav-toggle, .mobile-menu-container {
+        display: none; /* Garante que os elementos mobile NUNCA apareçam no desktop */
     }
 }
 
-@media (max-width: 767px) {
+/* Tablet e Celular (abaixo de 992px) */
+@media (max-width: 991px) {
     .main-nav, .dropdown-menu {
-        display: none;
+        display: none; /* Esconde a navegação e o dropdown de desktop */
     }
-    .nav-container {
-        justify-content: center;
+    
+    .logo-container { order: -1; /* Joga a logo para a esquerda */ }
+    
+    .nav-container { justify-content: space-between; }
+
+    /* Botão Hamburger */
+    .mobile-nav-toggle {
+        display: block;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        z-index: 1001;
     }
+    .mobile-nav-toggle .line {
+        display: block;
+        width: 1.75em;
+        height: 2px;
+        background: var(--text-color);
+        border-radius: 2px;
+        transition: transform 350ms ease-in-out, opacity 200ms linear;
+    }
+    .mobile-nav-toggle .line:nth-child(1) { margin-bottom: 0.5em; }
+    .mobile-nav-toggle .line:nth-child(3) { margin-top: 0.5em; }
+
+    /* Animação para "X" */
+    .mobile-nav-toggle[aria-expanded="true"] .line {
+        background: var(--text-color-light);
+    }
+    .mobile-nav-toggle[aria-expanded="true"] .line:nth-child(1) { transform: rotate(45deg) translateY(0.45em); }
+    .mobile-nav-toggle[aria-expanded="true"] .line:nth-child(2) { opacity: 0; }
+    .mobile-nav-toggle[aria-expanded="true"] .line:nth-child(3) { transform: rotate(-45deg) translateY(-0.45em); }
+    
+    /* Painel do Menu Mobile */
+    .mobile-menu-container {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(20, 20, 20, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 8rem 2rem 2rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    .mobile-menu-container.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+    .mobile-menu-container ul { list-style: none; text-align: center; }
+    .mobile-menu-container li { margin-bottom: 2rem; }
+    .mobile-menu-container a {
+        color: var(--text-color-light);
+        text-decoration: none;
+        font-size: 1.75rem;
+        font-weight: 600;
+    }
+
+    /* Outros ajustes de responsividade que já tínhamos */
+    .hero-title, .family-header h2, .feedback-header h2, .contact-header h2 { font-size: 32px; }
+    .hero-subtitle, .contact-header p { font-size: 16px; }
+    .feedback-card { flex: 0 0 80%; }
+}
+    /* Outros ajustes */
     .hero-title, .family-header h2, .feedback-header h2, .contact-header h2 {
         font-size: 32px;
     }
@@ -622,4 +681,3 @@ body {
     .feedback-card {
         flex: 0 0 80%;
     }
-}

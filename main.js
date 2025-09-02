@@ -1,56 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Lógica para o menu principal
-    const productsTrigger = document.querySelector('.dropdown-trigger');
-    const productsMenu = document.querySelector('.dropdown-menu');
-    const submenuTrigger = document.querySelector('.submenu-trigger');
-    const submenu = document.querySelector('.submenu');
 
-    function closeAllMenus() {
-        if (productsMenu) productsMenu.classList.remove('is-open');
-        if (submenu) submenu.classList.remove('is-open');
-        if (submenuTrigger) submenuTrigger.classList.remove('open');
-    }
+    // --- LÓGICA PARA NAVEGAÇÃO DE DESKTOP (GAVETA) ---
+    const desktopDropdownTrigger = document.querySelector('.dropdown-trigger');
+    const desktopDropdownMenu = document.querySelector('.dropdown-menu');
+    const desktopSubmenuTrigger = document.querySelector('.submenu-trigger');
+    const desktopSubmenu = document.querySelector('.submenu');
 
-    if (productsTrigger && productsMenu) {
-        // Abre e fecha o menu principal
-        productsTrigger.addEventListener('click', (event) => {
+    if (desktopDropdownTrigger && desktopDropdownMenu) {
+        desktopDropdownTrigger.addEventListener('click', (event) => {
             event.preventDefault();
-            productsMenu.classList.toggle('is-open');
+            desktopDropdownMenu.classList.toggle('is-open');
         });
 
-        // Abre e fecha o submenu
-        if (submenuTrigger && submenu) {
-            submenuTrigger.addEventListener('click', (event) => {
+        if (desktopSubmenuTrigger && desktopSubmenu) {
+            desktopSubmenuTrigger.addEventListener('click', (event) => {
                 event.preventDefault();
                 event.stopPropagation();
-                submenu.classList.toggle('is-open');
-                submenuTrigger.classList.toggle('open');
+                desktopSubmenu.classList.toggle('is-open');
+                desktopSubmenuTrigger.classList.toggle('open');
             });
         }
     }
 
-    // Fecha tudo se clicar fora do cabeçalho
+    // --- LÓGICA PARA NAVEGAÇÃO MOBILE (HAMBURGER) ---
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu-container');
+
+    if (mobileNavToggle && mobileMenu) {
+        mobileNavToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('is-open');
+            mobileNavToggle.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('is-open');
+                mobileNavToggle.setAttribute('aria-expanded', false);
+                document.body.style.overflow = 'auto';
+            });
+        });
+    }
+
+    // --- LÓGICA GERAL ---
+    // Fecha a gaveta de DESKTOP se clicar fora do cabeçalho
     document.addEventListener('click', (event) => {
         const header = document.querySelector('.main-header');
         if (header && !header.contains(event.target)) {
-            closeAllMenus();
+            if (desktopDropdownMenu) desktopDropdownMenu.classList.remove('is-open');
+            if (desktopSubmenu) desktopSubmenu.classList.remove('is-open');
+            if (desktopSubmenuTrigger) desktopSubmenuTrigger.classList.remove('open');
         }
     });
-    
-    // Fecha o menu ao clicar em um link que NÂO seja o gatilho do submenu
-    if (productsMenu) {
-        const menuLinks = productsMenu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                if (!event.currentTarget.parentElement.classList.contains('submenu-trigger')) {
-                    setTimeout(() => {
-                        closeAllMenus();
-                    }, 150);
-                }
-            });
-        });
-    }
 
+    // --- LÓGICA DO CARROSSEL DE FEEDBACKS (SEM ALTERAÇÕES) ---
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+        // ... (código do carrossel que já funciona)
+    }
+});
     // --- LÓGICA DO CARROSSEL DE FEEDBACKS (VERSÃO CORRIGIDA) ---
     const carouselContainer = document.querySelector('.carousel-container');
     if (carouselContainer) {
@@ -98,4 +106,3 @@ document.addEventListener('DOMContentLoaded', () => {
             prevButton.disabled = true;
         }
     }
-});
