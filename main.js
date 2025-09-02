@@ -1,68 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // --- LÓGICA PARA NAVEGAÇÃO DE DESKTOP (GAVETA) ---
-    // (Esta parte não foi alterada e continua funcionando)
     const desktopDropdownTrigger = document.querySelector('.dropdown-trigger');
     const desktopDropdownMenu = document.querySelector('.dropdown-menu');
-    const desktopSubmenuTrigger = document.querySelector('.submenu-trigger');
-    const desktopSubmenu = document.querySelector('.submenu');
+    const submenuTrigger = document.querySelector('.submenu-trigger');
+    const submenu = document.querySelector('.submenu');
 
     if (desktopDropdownTrigger && desktopDropdownMenu) {
-        desktopDropdownTrigger.addEventListener('click', (event) => {
+        desktopDropdownTrigger.parentElement.addEventListener('click', (event) => {
             event.preventDefault();
             desktopDropdownMenu.classList.toggle('is-open');
         });
-
-        if (desktopSubmenuTrigger && desktopSubmenu) {
-            desktopSubmenuTrigger.addEventListener('click', (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                desktopSubmenu.classList.toggle('is-open');
-                desktopSubmenuTrigger.classList.toggle('open');
-            });
-        }
+    }
+    
+    if (submenuTrigger && submenu) {
+        submenuTrigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            submenu.classList.toggle('is-open');
+            submenuTrigger.classList.toggle('open');
+        });
     }
 
-    // --- LÓGICA CORRIGIDA PARA NAVEGAÇÃO MOBILE (HAMBURGER) ---
-    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu-container');
-    const closeMenuBtn = document.querySelector('.close-menu-btn');
-
-    const openMenu = () => {
-        mobileMenu.classList.add('is-open');
-        mobileNavToggle.setAttribute('aria-expanded', true);
-        document.body.style.overflow = 'hidden';
-    };
-
-    const closeMenu = () => {
-        mobileMenu.classList.remove('is-open');
-        mobileNavToggle.setAttribute('aria-expanded', false);
-        document.body.style.overflow = 'auto';
-    };
-
-    if (mobileNavToggle && mobileMenu && closeMenuBtn) {
-        mobileNavToggle.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.contains('is-open');
-            if (isOpen) {
-                closeMenu();
-            } else {
-                openMenu();
+    // Fecha a gaveta se clicar fora
+    document.addEventListener('click', (event) => {
+        const dropdownContainer = document.querySelector('.dropdown-container');
+        if (dropdownContainer && !dropdownContainer.contains(event.target)) {
+            if (desktopDropdownMenu) {
+                desktopDropdownMenu.classList.remove('is-open');
             }
-        });
+            if (submenu) {
+                submenu.classList.remove('is-open');
+                submenuTrigger.classList.remove('open');
+            }
+        }
+    });
 
-        closeMenuBtn.addEventListener('click', closeMenu);
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-    }
-    // --- LÓGICA DO CARROSSEL DE FEEDBACKS (SEM ALTERAÇÕES) ---
-    const carouselContainer = document.querySelector('.carousel-container');
-    if (carouselContainer) {
-        // ... (código do carrossel que já funciona)
-    }
-});
-    // --- LÓGICA DO CARROSSEL DE FEEDBACKS (VERSÃO CORRIGIDA) ---
+    // --- LÓGICA DO CARROSSEL DE FEEDBACKS ---
     const carouselContainer = document.querySelector('.carousel-container');
     if (carouselContainer) {
         const track = carouselContainer.querySelector('.carousel-track');
@@ -70,19 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextButton = document.querySelector('.carousel-btn.next');
         const prevButton = document.querySelector('.carousel-btn.prev');
 
-        if (slides.length > 3) { // Só ativa o carrossel se houver mais de 3 slides
+        if (slides.length > 3) {
             let currentIndex = 0;
             const slidesPerPage = 3;
-            // Corrigido para apenas 2 páginas de 3 slides
             const totalPages = Math.ceil(slides.length / slidesPerPage);
 
             const moveToPage = () => {
-                // O cálculo correto usa a largura do container + o gap entre as "páginas"
-                const gap = 30; // O mesmo valor do gap no CSS
+                const gap = 30;
                 const amountToMove = currentIndex * (carouselContainer.offsetWidth + gap);
                 track.style.transform = `translateX(-${amountToMove}px)`;
-
-                // Atualiza os botões
                 prevButton.disabled = currentIndex === 0;
                 nextButton.disabled = currentIndex >= totalPages - 1;
             };
@@ -102,10 +71,54 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             window.addEventListener('resize', moveToPage);
-            moveToPage(); // Inicia na posição correta
+            moveToPage();
         } else {
-            // Se houver 3 slides ou menos, desativa os botões
             nextButton.disabled = true;
             prevButton.disabled = true;
         }
     }
+
+    // --- LÓGICA DO CONFIGURADOR DE PRODUTOS ---
+    const productCards = document.querySelectorAll('.product-configurator-card');
+    const whatsappNumber = '5513974200082';
+
+    productCards.forEach(card => {
+        const modelName = card.dataset.modelName;
+        const buyButton = card.querySelector('.buy-button');
+        
+        const optionGroups = card.querySelectorAll('.option-group');
+        optionGroups.forEach(group => {
+            const selectors = group.querySelectorAll('.selector, .color-swatch');
+            selectors.forEach(selector => {
+                selector.addEventListener('click', () => {
+                    group.querySelector('.selected').classList.remove('selected');
+                    selector.classList.add('selected');
+
+                    const newFrontImage = selector.dataset.frontImage;
+                    const imageFront = card.querySelector('.product-image-front');
+                    if (newFrontImage && imageFront) {
+                        imageFront.src = newFrontImage;
+                    }
+                });
+            });
+        });
+
+        if (buyButton) {
+            buyButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                let message = `Olá, Maximo Imports! Tenho interesse no seguinte modelo:\n\n- Produto: ${modelName}\n`;
+                optionGroups.forEach(group => {
+                    const label = group.querySelector('.option-label').innerText.replace(':', '');
+                    const selectedOption = group.querySelector('.selected').dataset.value;
+                    if (label && selectedOption) {
+                        message += `- ${label}: ${selectedOption}\n`;
+                    }
+                });
+                message += `\nAguardo o contato!`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        }
+    });
+});
