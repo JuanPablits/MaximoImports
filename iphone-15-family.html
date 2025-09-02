@@ -3,23 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprar Família iPhone 15 - Maximo Imports</title>
+    <title>Maximo Imports</title>
     <link rel="stylesheet" href="style.css">
     <script src="family-configurator.js" defer></script>
 </head>
 <body>
 
-    <header class="main-header">
+<header class="main-header">
         <div class="nav-container">
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html#familia">Produtos</a></li>
+                    <li class="dropdown-container">
+                        <a href="#" class="dropdown-trigger">Produtos</a>
+                    </li>
                     <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
             <div class="logo-container">
-                <span>Maximo Imports</span>
+                <a href="index.html">
+                    <img src="images/LogoImports.png" alt="Maximo Imports Logo" class="header-logo">
+                </a>
+            </div>
+        </div>
+        <div class="dropdown-menu">
+            <div class="dropdown-content-wrapper">
+                <div class="dropdown-column">
+                    <span class="menu-title">Comprar</span>
+                    <ul>
+                        <li><a href="iphone-16-family.html">Lançamentos</a></li>
+                        <li><a href="index.html#macbooks">Mac</a></li>
+                        <li><a href="index.html#ipads">iPad</a></li>
+                        <li class="submenu-trigger">
+                            <a href="#">iPhone</a>
+                            <ul class="submenu">
+                                <li><a href="index.html#iphones">Novos</a></li>
+                                <li><a href="usados.html">Usados</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#watches">Apple Watch</a></li>
+                        <li><a href="index.html#airpods">AirPods</a></li>
+                        <li><a href="index.html#acessorios">Acessórios</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -41,15 +67,6 @@
                          <div class="color-swatch selected" data-color="Titânio Natural" style="background-color: #8B8681;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1693069326828" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692914235332"></div>
                          <div class="color-swatch" data-color="Titânio Azul" style="background-color: #2E3A48;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1693069322159" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692914232223"></div>
                     </div>
-                </div>
-                <div class="option-group">
-                    <p class="option-label">Condição:</p>
-                    <div class="selector selected" data-condition="Novo">Novo</div>
-                    <div class="selector" data-condition="Usado">Usado</div>
-                </div>
-                 <div class="availability-notice">
-                    <p><b>Atenção:</b> Produtos usados estão sujeitos à disponibilidade e condições. Para mais informações, entre em contato conosco.</p>
-                    <button class="close-notice-btn">Entendido</button>
                 </div>
                 <div class="option-group"><p class="option-label">Armazenamento:</p>
                     <div class="selector selected" data-capacity="256GB">256GB</div>
@@ -73,15 +90,6 @@
                         <div class="color-swatch" data-color="Titânio Preto" style="background-color: #404143;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-blacktitanium-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1693069156338" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-blacktitanium-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692914184612"></div>
                     </div>
                 </div>
-                <div class="option-group">
-                    <p class="option-label">Condição:</p>
-                    <div class="selector selected" data-condition="Novo">Novo</div>
-                    <div class="selector" data-condition="Usado">Usado</div>
-                </div>
-                 <div class="availability-notice">
-                    <p><b>Atenção:</b> Produtos usados estão sujeitos à disponibilidade e condições. Para mais informações, entre em contato conosco.</p>
-                    <button class="close-notice-btn">Entendido</button>
-                </div>
                 <div class="option-group"><p class="option-label">Armazenamento:</p>
                     <div class="selector selected" data-capacity="128GB">128GB</div>
                     <div class="selector" data-capacity="256GB">256GB</div>
@@ -104,15 +112,6 @@
                         <div class="color-swatch" data-color="Azul" style="background-color: #D6E5EF;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch-blue-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692914198836" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch-blue-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692914197472"></div>
                     </div>
                 </div>
-                <div class="option-group">
-                    <p class="option-label">Condição:</p>
-                    <div class="selector selected" data-condition="Novo">Novo</div>
-                    <div class="selector" data-condition="Usado">Usado</div>
-                </div>
-                 <div class="availability-notice">
-                    <p><b>Atenção:</b> Produtos usados estão sujeitos à disponibilidade e condições. Para mais informações, entre em contato conosco.</p>
-                    <button class="close-notice-btn">Entendido</button>
-                </div>
                 <div class="option-group"><p class="option-label">Armazenamento:</p>
                     <div class="selector selected" data-capacity="128GB">128GB</div>
                     <div class="selector" data-capacity="256GB">256GB</div>
@@ -134,15 +133,6 @@
                         <div class="color-swatch selected" data-color="Verde" style="background-color: #DBE5C9;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-green-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692914181827" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-green-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692914179586"></div>
                         <div class="color-swatch" data-color="Preto" style="background-color: #505153;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-black-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692914176030" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-black-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692914175783"></div>
                     </div>
-                </div>
-                <div class="option-group">
-                    <p class="option-label">Condição:</p>
-                    <div class="selector selected" data-condition="Novo">Novo</div>
-                    <div class="selector" data-condition="Usado">Usado</div>
-                </div>
-                 <div class="availability-notice">
-                    <p><b>Atenção:</b> Produtos usados estão sujeitos à disponibilidade e condições. Para mais informações, entre em contato conosco.</p>
-                    <button class="close-notice-btn">Entendido</button>
                 </div>
                  <div class="option-group"><p class="option-label">Armazenamento:</p>
                     <div class="selector selected" data-capacity="128GB">128GB</div>

@@ -3,23 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprar Família iPhone 14 - Maximo Imports</title>
+    <title>Maximo Imports</title>
     <link rel="stylesheet" href="style.css">
     <script src="family-configurator.js" defer></script>
 </head>
 <body>
 
-    <header class="main-header">
+ <header class="main-header">
         <div class="nav-container">
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html#familia">Produtos</a></li>
+                    <li class="dropdown-container">
+                        <a href="#" class="dropdown-trigger">Produtos</a>
+                    </li>
                     <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
             <div class="logo-container">
-                <span>Maximo Imports</span>
+                <a href="index.html">
+                    <img src="images/LogoImports.png" alt="Maximo Imports Logo" class="header-logo">
+                </a>
+            </div>
+        </div>
+        <div class="dropdown-menu">
+            <div class="dropdown-content-wrapper">
+                <div class="dropdown-column">
+                    <span class="menu-title">Comprar</span>
+                    <ul>
+                        <li><a href="iphone-16-family.html">Lançamentos</a></li>
+                        <li><a href="index.html#macbooks">Mac</a></li>
+                        <li><a href="index.html#ipads">iPad</a></li>
+                        <li class="submenu-trigger">
+                            <a href="#">iPhone</a>
+                            <ul class="submenu">
+                                <li><a href="index.html#iphones">Novos</a></li>
+                                <li><a href="usados.html">Usados</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#watches">Apple Watch</a></li>
+                        <li><a href="index.html#airpods">AirPods</a></li>
+                        <li><a href="index.html#acessorios">Acessórios</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -41,15 +67,6 @@
                          <div class="color-swatch selected" data-color="Roxo-profundo" style="background-color: #574f6f;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-7inch-deeppurple-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703892542" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-7inch-deeppurple-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703891962"></div>
                          <div class="color-swatch" data-color="Dourado" style="background-color: #f5e1c8;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-7inch-gold-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703893499" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-7inch-gold-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703893213"></div>
                     </div>
-                </div>
-                <div class="option-group">
-                    <p class="option-label">Condição:</p>
-                    <div class="selector selected" data-condition="Novo">Novo</div>
-                    <div class="selector" data-condition="Usado">Usado</div>
-                </div>
-                 <div class="availability-notice">
-                    <p><b>Atenção:</b> Produtos usados estão sujeitos à disponibilidade e condições. Para mais informações, entre em contato conosco.</p>
-                    <button class="close-notice-btn">Entendido</button>
                 </div>
                 <div class="option-group"><p class="option-label">Armazenamento:</p>
                     <div class="selector selected" data-capacity="128GB">128GB</div>
@@ -74,15 +91,6 @@
                          <div class="color-swatch" data-color="Prateado" style="background-color: #f2f3f4;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-silver-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703886555" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-silver-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703885923"></div>
                     </div>
                 </div>
-                <div class="option-group">
-                    <p class="option-label">Condição:</p>
-                    <div class="selector selected" data-condition="Novo">Novo</div>
-                    <div class="selector" data-condition="Usado">Usado</div>
-                </div>
-                 <div class="availability-notice">
-                    <p><b>Atenção:</b> Produtos usados estão sujeitos à disponibilidade e condições. Para mais informações, entre em contato conosco.</p>
-                    <button class="close-notice-btn">Entendido</button>
-                </div>
                 <div class="option-group"><p class="option-label">Armazenamento:</p>
                     <div class="selector selected" data-capacity="128GB">128GB</div>
                     <div class="selector" data-capacity="256GB">256GB</div>
@@ -106,15 +114,6 @@
                          <div class="color-swatch" data-color="(PRODUCT)RED" style="background-color: #fe0000;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-product-red-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1661022831837" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-product-red-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1661022831835"></div>
                     </div>
                 </div>
-                <div class="option-group">
-                    <p class="option-label">Condição:</p>
-                    <div class="selector selected" data-condition="Novo">Novo</div>
-                    <div class="selector" data-condition="Usado">Usado</div>
-                </div>
-                 <div class="availability-notice">
-                    <p><b>Atenção:</b> Produtos usados estão sujeitos à disponibilidade e condições. Para mais informações, entre em contato conosco.</p>
-                    <button class="close-notice-btn">Entendido</button>
-                </div>
                 <div class="option-group"><p class="option-label">Armazenamento:</p>
                     <div class="selector selected" data-capacity="128GB">128GB</div>
                     <div class="selector" data-capacity="256GB">256GB</div>
@@ -136,15 +135,6 @@
                         <div class="color-swatch selected" data-color="Amarelo" style="background-color: #f8e785;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-yellow-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1676405786311" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-yellow-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1676405786340"></div>
                         <div class="color-swatch" data-color="Roxo" style="background-color: #e5ddea;" data-front-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-purple-front?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1661022832050" data-back-image="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-purple-back?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1661022832047"></div>
                     </div>
-                </div>
-                <div class="option-group">
-                    <p class="option-label">Condição:</p>
-                    <div class="selector selected" data-condition="Novo">Novo</div>
-                    <div class="selector" data-condition="Usado">Usado</div>
-                </div>
-                 <div class="availability-notice">
-                    <p><b>Atenção:</b> Produtos usados estão sujeitos à disponibilidade e condições. Para mais informações, entre em contato conosco.</p>
-                    <button class="close-notice-btn">Entendido</button>
                 </div>
                  <div class="option-group"><p class="option-label">Armazenamento:</p>
                     <div class="selector selected" data-capacity="128GB">128GB</div>

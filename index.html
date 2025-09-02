@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximo Imports - O melhor do mundo Apple</title>
+    <title>Maximo Imports</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-
     <header class="main-header">
         <div class="nav-container">
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#familia">Produtos</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Feedbacks</a></li>
+                    <li><a href="index.html">Início</a></li>
+                    <li class="dropdown-container">
+                        <a href="#" class="dropdown-trigger">Produtos</a>
+                    </li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
             <div class="logo-container">
-                <span>Maximo Imports</span>
+                <a href="index.html">
+                    <img src="images/LogoImports.png" alt="Maximo Imports Logo" class="header-logo">
+                </a>
+            </div>
+        </div>
+        <div class="dropdown-menu">
+            <div class="dropdown-content-wrapper">
+                <div class="dropdown-column">
+                    <span class="menu-title">Comprar</span>
+                    <ul>
+                        <li><a href="iphone-16-family.html">Lançamentos</a></li>
+                        <li><a href="#macbooks">Mac</a></li>
+                        <li><a href="#ipads">iPad</a></li>
+                        <li class="submenu-trigger">
+                            <a href="#">iPhone</a>
+                            <ul class="submenu">
+                                <li><a href="#iphones">Novos</a></li>
+                                <li><a href="usados.html">Usados</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#watches">Apple Watch</a></li>
+                        <li><a href="#airpods">AirPods</a></li>
+                        <li><a href="#acessorios">Acessórios</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -28,22 +53,14 @@
         <div class="hero-content">
             <h1 class="hero-title">Bem-vindo à Maximo Imports</h1>
             <p class="hero-subtitle">Sua porta de entrada para o ecossistema Apple.</p>
-            <div class="category-buttons">
-                <a href="#familia">iPhones</a>
-                <a href="#">MacBooks</a>
-                <a href="#">iPads</a>
-                <a href="#">Apple Watch</a>
-                <a href="#">AirPods</a>
-            </div>
         </div>
     </section>
 
-    <section class="family-section" id="familia">
+    <section class="family-section" id="iphones">
         <div class="family-container">
             <div class="family-header">
-                <h2>Conheça a família.</h2>
+                <h2>iPhones</h2>
             </div>
-
             <div class="product-grid">
                 <div class="product-card">
                     <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-compare-iphone-15-pro-202309?wid=384&hei=512&fmt=jpeg&qlt=90&.v=1692827833330" alt="iPhone 16">
@@ -54,7 +71,6 @@
                         <a href="iphone-16-family.html" class="button-primary">Ver modelos</a>
                     </div>
                 </div>
-
                 <div class="product-card">
                     <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-compare-iphone-15-202309?wid=384&hei=512&fmt=jpeg&qlt=90&.v=1692827833319" alt="iPhone 15">
                     <h3>iPhone 15</h3>
@@ -64,7 +80,6 @@
                         <a href="iphone-15-family.html" class="button-primary">Ver modelos</a>
                     </div>
                 </div>
-
                 <div class="product-card">
                     <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-compare-iphone-14-202209?wid=384&hei=512&fmt=jpeg&qlt=90&.v=169282783332%20сравнить" alt="iPhone 14">
                     <h3>iPhone 14</h3>
@@ -74,8 +89,198 @@
                         <a href="iphone-14-family.html" class="button-primary">Ver modelos</a>
                     </div>
                 </div>
-
             </div>
+        </div>
+    </section>
+
+    <section class="family-section" id="macbooks">
+        <div class="family-container">
+            <div class="family-header">
+                <h2>MacBooks</h2>
+            </div>
+            <div class="product-grid">
+                 <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1664472289660" alt="MacBook Air">
+                    <h3>MacBook Air</h3>
+                    <p class="tagline">Leve no peso. Pesado na potência.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="macbooks.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-pro-13-in-space-gray-pdp-hero-202206?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1652986043539" alt="MacBook Pro">
+                    <h3>MacBook Pro</h3>
+                    <p class="tagline">Uma fera de profissional.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="macbooks.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-24-blue-selection-hero-202310?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1697303723223" alt="iMac">
+                    <h3>iMac</h3>
+                    <p class="tagline">Cor e poder em perfeita harmonia.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="macbooks.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="family-section" id="ipads">
+        <div class="family-container">
+            <div class="family-header">
+                <h2>iPads</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-13-select-wifi-spaceblack-202405?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1713509202020" alt="iPad Pro">
+                    <h3>iPad Pro</h3>
+                    <p class="tagline">O poder levado ao extremo.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="ipads.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-13-select-wifi-blue-202405?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1713466324217" alt="iPad Air">
+                    <h3>iPad Air</h3>
+                    <p class="tagline">Leve. Brilhante. Potente.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="ipads.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10-9-select-wifi-blue-202210?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1664411158158" alt="iPad">
+                    <h3>iPad</h3>
+                    <p class="tagline">Para tudo e para todos.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="ipads.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="family-section" id="watches">
+        <div class="family-container">
+            <div class="family-header">
+                <h2>Apple Watch</h2>
+            </div>
+            <div class="product-grid">
+                 <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-s9-202309?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693949539352" alt="Apple Watch Series 10">
+                    <h3>Apple Watch Series 10</h3>
+                    <p class="tagline">Mais inteligente. Mais brilhante.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="watches.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-ultra2-202309?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693949538329" alt="Apple Watch Ultra 3">
+                    <h3>Apple Watch Ultra 3</h3>
+                    <p class="tagline">A aventura no limite.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="watches.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-se-202309?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693949538890" alt="Apple Watch SE">
+                    <h3>Apple Watch SE</h3>
+                    <p class="tagline">Um ótimo negócio. Para amar.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="watches.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="family-section" id="airpods">
+        <div class="family-container">
+            <div class="family-header">
+                <h2>AirPods</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-silver-202011?wid=470&hei=556&fmt=png-alpha&.v=1604021221000" alt="AirPods Max">
+                    <h3>AirPods Max</h3>
+                    <p class="tagline">O som da mais alta fidelidade.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="airpods.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MME73?wid=470&hei=556&fmt=png-alpha&.v=1632861342000" alt="AirPods (3ª geração)">
+                    <h3>AirPods (3ª geração)</h3>
+                    <p class="tagline">Áudio Espacial e design novo.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="airpods.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=470&hei=556&fmt=png-alpha&.v=1660803972361" alt="AirPods Pro (2ª geração)">
+                    <h3>AirPods Pro (2ª geração)</h3>
+                    <p class="tagline">Cancelamento de Ruído superior.</p>
+                    <p class="price">Consulte os modelos</p>
+                    <div class="card-actions">
+                        <a href="airpods.html" class="button-primary">Ver modelos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="family-section" id="acessorios">
+        <div class="family-container">
+            <div class="family-header">
+                <h2>Acessórios</h2>
+            </div>
+            <div class="product-grid">
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback-section" id="feedbacks">
+        <div class="feedback-container">
+            <div class="feedback-header">
+                <h2>O que nossos clientes dizem</h2>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="feedback-card"><div class="stars">★★★★★</div><p class="comment">"Atendimento impecável e produto chegou antes do prazo. O iPhone veio lacrado, tudo perfeito. Com certeza comprarei novamente!"</p><p class="author">- Mariana S.</p></div>
+                    <div class="feedback-card"><div class="stars">★★★★★</div><p class="comment">"Melhor preço que encontrei para o MacBook Pro. A equipe tirou todas as minhas dúvidas com muita paciência. Recomendo de olhos fechados."</p><p class="author">- Ricardo L.</p></div>
+                    <div class="feedback-card"><div class="stars">★★★★★</div><p class="comment">"Comprei um Apple Watch e estou amando. A Maximo Imports foi super atenciosa do início ao fim do processo de compra."</p><p class="author">- Julia F.</p></div>
+                    <div class="feedback-card"><div class="stars">★★★★★</div><p class="comment">"O processo de compra pelo WhatsApp é muito prático e seguro. Recebi meu AirPods Pro em 2 dias. Fantástico!"</p><p class="author">- Fernando P.</p></div>
+                    <div class="feedback-card"><div class="stars">★★★★★</div><p class="comment">"Loja de confiança! Produto 100% original e um atendimento que faz toda a diferença. Virei cliente fiel."</p><p class="author">- Beatriz M.</p></div>
+                    <div class="feedback-card"><div class="stars">★★★★★</div><p class="comment">"Meu iPad chegou em perfeitas condições. Agradeço a toda a equipe da Maximo Imports pela agilidade e profissionalismo."</p><p class="author">- Carlos E.</p></div>
+                </div>
+            </div>
+            <div class="carousel-navigation">
+                <button class="carousel-btn prev">‹</button>
+                <button class="carousel-btn next">›</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contato">
+        <div class="contact-header">
+            <h2>Entre em Contato</h2>
+            <p>Ficou com alguma dúvida ou quer fazer um pedido? Fale conosco! Nossa equipe está pronta para te atender.</p>
+        </div>
+        <div class="contact-buttons">
+            <a href="https://wa.me/5513974200082" target="_blank" class="contact-btn whatsapp">Chamar no WhatsApp</a>
+            <a href="https://www.instagram.com/maximoimportsbr/" target="_blank" class="contact-btn instagram">Siga-nos no Instagram</a>
         </div>
     </section>
 </body>
